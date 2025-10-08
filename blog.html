@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Blog — Christopher Mutua Muli</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand"><img src="static/photo.jpg" alt="profile"><div><div class="name">Christopher Mutua Muli</div><div class="sub">Construction Engineer</div></div></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2 class="section-title reveal">Videos & Insights</h2>
+      <div class="video-wrap reveal">
+        <video controls>
+          <source src="static/video1.mp4" type="video/mp4">
+          Your browser doesn't support HTML5 video.
+        </video>
+
+        <video controls>
+          <source src="static/video2.mp4" type="video/mp4">
+          Your browser doesn't support HTML5 video.
+        </video>
+      </div>
+
+      <article class="reveal" style="margin-top:18px">
+        <h3>Modern Concrete Practices</h3>
+        <p>Notes, observations and short clips from recent projects — focusing on curing, formwork and safety.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div>
+      <div class="socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+    </div>
+    <div class="footer-bottom">© 2025 Christopher Mutua Muli</div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible')})},{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>

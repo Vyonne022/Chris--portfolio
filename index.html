@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Christopher Mutua Muli — Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a2e0a6a48c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <img src="static/photo.jpg" alt="profile">
+        <div>
+          <div class="name">Christopher Mutua Muli</div>
+          <div class="sub">Construction Engineer</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-left reveal">
+        <h1 class="hero-title">From Concept to Concrete — I Deliver Quality.</h1>
+        <p class="hero-desc">Structural design • Project supervision • Quality control • Sustainable construction</p>
+        <div class="cta">
+          <a class="btn btn-gold" href="static/resume.pdf" download>Download Resume</a>
+          <a class="btn btn-outline" href="static/cv.pdf" download>Download CV</a>
+        </div>
+      </div>
+
+      <div class="hero-right reveal">
+        <img class="hero-photo" src="static/photo.jpg" alt="Christopher Mutua — profile">
+      </div>
+    </section>
+
+    <section class="highlights container">
+      <h3 class="section-title reveal">Quick Highlights</h3>
+      <div class="card-grid">
+        <div class="card reveal"><h4>Experience</h4><p>3+ years delivering residential & commercial projects.</p></div>
+        <div class="card reveal"><h4>Skills</h4><p>Structural analysis, Revit, AutoCAD, site supervision.</p></div>
+        <div class="card reveal"><h4>Focus</h4><p>Sustainable, cost-effective and long-lasting construction.</p></div>
+      </div>
+    </section>
+
+    <section class="recommend container">
+      <h3 class="section-title reveal">Recommendation Letters</h3>
+      <div class="recommend-grid">
+        <div class="recommend-card reveal">
+          <h4>Recommendation Letter 1</h4>
+          <p>From: Eng. Joseph Muli — CEO, Muflo Properties</p>
+          <a href="static/recommendation1.pdf" class="btn btn-gold" download>Download Letter</a>
+        </div>
+
+        <div class="recommend-card reveal">
+          <h4>Recommendation Letter 2</h4>
+          <p>From: Richard Parmereta — CEO, Lenkai Real Estate & Properties Limited.</p>
+          <a href="static/recommendation2.pdf" class="btn btn-outline" download>Download Letter</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="socials">
+        <a href="#" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:christopher@example.com" aria-label="email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Christopher Mutua Muli</div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

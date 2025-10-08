@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contact — Christopher Mutua Muli</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand"><img src="static/photo.jpg" alt="profile"><div><div class="name">Christopher Mutua Muli</div><div class="sub">Construction Engineer</div></div></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2 class="section-title reveal">Let's Talk</h2>
+      <div class="contact-wrap">
+        <form id="contactForm" class="contact-form reveal">
+          <input id="name" type="text" placeholder="Full name" required>
+          <input id="email" type="email" placeholder="Email address" required>
+          <textarea id="message" rows="6" placeholder="Message" required></textarea>
+
+          <div style="display:flex;gap:10px;">
+            <button type="submit" class="btn btn-gold">Send Message</button>
+            <button type="button" class="btn btn-outline" onclick="copyEmail()">Copy Email</button>
+          </div>
+
+          <p id="status" style="margin-top:10px;color:var(--muted)"></p>
+        </form>
+
+        <div class="contact-info reveal">
+          <h4>Contact Info</h4>
+          <p><strong>Email:</strong> <a href="christophermuli99@gmail.com">christophermuli99@gmail.com</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/254713431643" target="_blank">+254 713 431 643</a></p>
+          <p><strong>Phone:</strong> +254 713 431 643</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="blog.html">Blog</a></div>
+      <div class="socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+    </div>
+    <div class="footer-bottom">© 2025 Christopher Mutua Muli</div>
+  </footer>
+
+  <script>
+    
+    const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible')})},{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    function copyEmail(){ navigator.clipboard?.writeText('christophermuli99@gmail.com').then(()=>alert('Email copied to clipboard')) }
+
+    document.getElementById('contactForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const statusEl = document.getElementById('status');
+      statusEl.textContent = 'Sending…';
+      const payload = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        message: document.getElementById('message').value.trim()
+      };
+      try{
+        const res = await fetch('/api/send_message', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if(data.success){
+          statusEl.style.color = 'green';
+          statusEl.textContent = data.message;
+          e.target.reset();
+        } else {
+          statusEl.style.color = 'crimson';
+          statusEl.textContent = 'Error sending message.';
+        }
+      } catch(err){
+        statusEl.style.color = 'crimson';
+        statusEl.textContent = 'Network error — ensure backend is running.';
+      }
+    });
+  </script>
+</body>
+</html>

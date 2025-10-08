@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Projects — Christopher Mutua Muli</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a2e0a6a48c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand"><img src="static/photo.jpg" alt="profile"><div><div class="name">Christopher Mutua Muli</div><div class="sub">Construction Engineer</div></div></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2 class="section-title reveal">Projects — Organized by Phases</h2>
+
+      <div class="reveal">
+        <div class="phase-title">Prime Homes</div>
+        <p class="muted">Elegant residential phase — structure, finishing & landscaping.</p>
+        <div class="gallery">
+          <img src="static/house1.jpg" alt="">
+          <img src="static/house2.jpg" alt="">
+          <img src="static/house3.jpg" alt="">
+          <img src="static/house4.jpg" alt="">
+          <img src="static/house5.jpg" alt="">
+          <img src="static/house6.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="phase-title">Flora Homes</div>
+        <p class="muted">Sustainable housing with green materials and modern finishes.</p>
+        <div class="gallery">
+          <img src="static/house7.jpg" alt="">
+          <img src="static/house8.jpg" alt="">
+          <img src="static/house9.jpg" alt="">
+          <img src="static/house10.jpg" alt="">
+          <img src="static/house11.jpg" alt="">
+          <img src="static/house12.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="phase-title">Briella Homes</div>
+        <p class="muted">Premium finishes, modern systems — built to last.</p>
+        <div class="gallery">
+          <img src="static/house13.jpg" alt="">
+          <img src="static/house14.jpg" alt="">
+          <img src="static/house15.jpg" alt="">
+          <img src="static/house16.jpg" alt="">
+          <img src="static/house17.jpg" alt="">
+          <img src="static/house18.jpg" alt="">
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
+      <div class="socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+    </div>
+    <div class="footer-bottom">© 2025 Christopher Mutua Muli</div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible')})},{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
